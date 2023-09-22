@@ -1,0 +1,69 @@
+{
+    "name": "maptalks-react",
+    "description": "maptalks-React版", 
+    "private": false,
+    "version": "0.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "tsc && vite build",
+        "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+        "preview": "vite preview",
+        "docs:build": "dumi build",
+        "docs:dev": "dumi dev"
+    },
+    "publishConfig": {
+        "registry": "https://dev.scet.com.cn/verdaccio/"
+    },
+    "author": "DB-Thor@outlook.com",
+    "license": "MIT",
+
+    "files": [
+        "dist"
+    ],
+    "main": "dist/maptalks-react.umd.js",
+    "module": "dist/maptalks-react.es.js",
+    "types": "dist/index.d.ts",
+    "exports": {
+        ".": {
+            "import": "./dist/maptalks-react.es.js",
+            "require": "./dist/maptalks-react.umd.js"
+        },
+        "./*": "./*"
+    },
+    "dependencies": {
+        "classnames": "^2.3.2",
+        "lodash-es": "^4.17.21",
+        "maptalks": "1.0.0-rc.25",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0"
+    },
+    "devDependencies": {
+        "@types/lodash-es": "^4.17.9",
+        "@types/maptalks": "^0.49.3",
+        "@types/react": "^18.2.15",
+        "@types/react-dom": "^18.2.7",
+        "@typescript-eslint/eslint-plugin": "^6.0.0",
+        "@typescript-eslint/parser": "^6.0.0",
+        "@vitejs/plugin-react-swc": "^3.3.2",
+        "autoprefixer": "^10.4.16",
+        "css-loader": "^6.8.1",
+        "dumi": "^2.2.10",
+        "eslint": "^8.45.0",
+        "eslint-plugin-react-hooks": "^4.6.0",
+        "eslint-plugin-react-refresh": "^0.4.3",
+        "path": "^0.12.7",
+        "postcss": "^8.4.30",
+        "postcss-loader": "^7.3.3",
+        "prettier-plugin-organize-imports": "^3.2.3",
+        "prettier-plugin-packagejson": "^2.4.5",
+        "react-router-dom": "^6.16.0",
+        "style-loader": "^3.3.3",
+        "tailwindcss": "^3.3.3",
+        "typescript": "^5.0.2",
+        "vite": "^4.4.5",
+        "vite-plugin-compression2": "^0.10.5",
+        "vite-plugin-css-injected-by-js": "^3.3.0",
+        "vite-plugin-dts": "^3.5.4"
+    }
+}
