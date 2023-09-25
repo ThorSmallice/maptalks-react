@@ -1,17 +1,17 @@
 export interface BaseSymbol {
-    opacity
-    shadowBlur
-    shadowColor
-    shadowOffsetX
-    shadowOffsetY
+    opacity :number
+    shadowBlur :number
+    shadowColor : string
+    shadowOffsetX :  number
+    shadowOffsetY : number
 }
 
 export interface MarkerSymbol extends BaseSymbol {
-    markerOpacity
-    markerWidth
-    markerHeight
-    markerDx
-    markerDy
+    markerOpacity : number 
+    markerWidth  : number 
+    markerHeight : number 
+    markerDx : number 
+    markerDy : number 
     markerHorizontalAlignment
     markerVerticalAlignment
     markerPlacement

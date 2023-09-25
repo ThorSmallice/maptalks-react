@@ -1,38 +1,55 @@
 import { Context as MapContext, initStore, reducer } from '@context/index'
-import useMap from '@hooks/useMap'
+
 import cn from 'classnames'
-import React, { Component, FC, useEffect, useReducer, useRef } from 'react'
+import React, { Component, FC, memo, useEffect, useMemo, useReducer, useRef } from 'react'
 import './index.pcss'
 import { MaptalksProps } from './index.type'
+import { Map, TileLayer } from 'maptalks'
+import { find, first } from 'lodash-es'
+const Maptalks: FC<MaptalksProps> = memo(
+    ({ children, className, baseLayerId, options }: MaptalksProps) => {
+        const [store, dispatch] = useReducer(reducer, initStore)
 
-const Maptalks: FC<MaptalksProps> = ({ children, className, ...options }) => {
-    const [store, dispatch] = useReducer(reducer, initStore)
+        const ref = useRef<HTMLDivElement>(null)
 
-    const ref = useRef<HTMLDivElement>(null)
-    const mapInstance = useMap({
-        container: ref,
-    })
+        useEffect(() => {
+            const map = new Map(ref.current, {
+                center: [107.71791425, 39.17770167],
+                attribution: false,
+                baseLayer:
+                    find(store?.tileLayers, { id: baseLayerId })?.instance ||
+                    (first(store?.tileLayers) as any)?.instance,
+                zoom: 5,
+                ...options,
+            })
+            dispatch({
+                type: 'saveMapInstance',
+                data: map,
+            })
+            return () => {
+                map?.remove()
+                dispatch({
+                    type: 'saveMapInstance',
+                    data: null,
+                })
+            }
+        }, [options, store?.tileLayers])
 
-    useEffect(() => {
-        dispatch({
-            type: 'saveMapInstance',
-            data: mapInstance,
-        })
-    }, [mapInstance])
-    return (
-        <MapContext.Provider
-            value={{
-                store,
-                dispatch,
-            }}
-        >
-            <div className={cn('maptalks-map-root', className)}>
-                <div id="maptalksMap" className={cn('maptalks-map')} ref={ref}></div>
+        return (
+            <MapContext.Provider
+                value={{
+                    store,
+                    dispatch,
+                }}
+            >
+                <div className={cn('maptalks-map-root', className)}>
+                    <div id="maptalksMap" className={cn('maptalks-map')} ref={ref}></div>
 
-                <div className={cn('maptalks-map-children')}>{children}</div>
-            </div>
-        </MapContext.Provider>
-    )
-}
+                    <div className={cn('maptalks-map-children')}>{children}</div>
+                </div>
+            </MapContext.Provider>
+        )
+    }
+)
 
 export default Maptalks
