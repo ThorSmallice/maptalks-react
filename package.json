@@ -35,9 +35,7 @@
         "./*": "./*"
     },
     "homepage": "https://maptalks-react.dbice.cn/",
-    "repository": {
-        "github": "https://github.com/ThorSmallice/maptalks-react"
-    },
+    "repository": "https://github.com/ThorSmallice/maptalks-react",
     "dependencies": {
         "classnames": "^2.3.2",
         "lodash-es": "^4.17.21",
