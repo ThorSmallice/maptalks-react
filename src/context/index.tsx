@@ -23,19 +23,20 @@ const reducer = (preStore: any, action: any): any => {
         case 'addLayers':
             return {
                 ...preStore,
-                [`${data?.type}s`]: [...preStore?.[data?.type + 's'], data?.instance],
+                [`${data?.type}s`]: uniqBy([data, ...(preStore?.[`${data?.type}s`] || [])], 'id'),
             }
         case 'removeLayers':
             return {
                 ...preStore,
-                [`${data?.type}s`]: [...preStore?.[data?.type + 's']]?.filter(
-                    (item) => item?._id !== data?.id
+                [`${data?.type}s`]: differenceBy(
+                    [...(preStore?.[`${data?.type}s`] || []), data],
+                    'id'
                 ),
             }
         case 'addTileLayers':
             return {
                 ...preStore,
-                tileLayers: uniqBy([...preStore.tileLayers, ...data], 'id'),
+                tileLayers: uniqBy([...data, ...preStore.tileLayers], 'id'),
             }
         case 'removeTileLayers':
             return {
