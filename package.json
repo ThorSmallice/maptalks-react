@@ -2,7 +2,7 @@
     "name": "maptalks-react",
     "description": "maptalks-React版",
     "private": false,
-    "version": "0.0.0",
+    "version": "0.0.2",
     "type": "module",
     "scripts": {
         "dev": "vite",
@@ -12,7 +12,13 @@
         "docs:build": "dumi build",
         "docs:dev": "dumi dev"
     },
-    "publishConfig": {},
+    "publishConfig": {
+        "registry": "https://registry.npmjs.org/"
+    },
+    "keywords": [
+        "maptalks-react",
+        "maptalks"
+    ],
     "author": "DB-Thor@outlook.com",
     "license": "MIT",
     "files": [
@@ -27,6 +33,10 @@
             "require": "./dist/maptalks-react.umd.js"
         },
         "./*": "./*"
+    },
+    "homepage": "https://maptalks-react.dbice.cn/",
+    "repository": {
+        "github": "https://github.com/ThorSmallice/maptalks-react"
     },
     "dependencies": {
         "classnames": "^2.3.2",
