@@ -1,6 +1,7 @@
 ---
 nav:
-  title: Hooks
+    title: Hooks
+    order: 2
 ---
 
 # hooks

@@ -23,8 +23,8 @@
         "baseUrl": "./",
         "paths": {
             // "@@/*": [".dumi/tmp/*"],
-            "maptalks-react": ["src"],
-            "maptalks-react/*": ["src/*", "*"],
+            "maptalks-react": ["dist"],
+            "maptalks-react/*": ["dist/*", "*"],
             "@context/*": ["src/context/*"],
             "@hooks/*": ["src/hooks/*"],
             "@comps/*": ["src/components/*"]

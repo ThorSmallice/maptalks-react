@@ -7,6 +7,8 @@
         
             export { default as TileLayer } from '@comps/TileLayer';
         
+            export { default as useInfoWindow } from '@hooks/useInfoWindow'; 
+        
             export { default as useScene } from '@hooks/useScene'; 
         
             export { default as useVectorLayer } from '@hooks/useVectorLayer'; 
