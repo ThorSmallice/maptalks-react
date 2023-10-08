@@ -2,16 +2,19 @@
 nav:
     title: 组件
 group:
-    title: 容器
+    title: 基础图层
+
+order: 0
 ---
 
 # TileLayer
 
 用于配置底图图源,配置后可以控制Maptalks的baseLayerId进行切换
 
-```jsx
+```tsx
 import { Maptalks, TileLayer } from 'maptalks-react'
 import { useState } from 'react'
+
 export default () => {
     const [options, setOptions] = useState({
         center: [107.71791425, 39.17770167],

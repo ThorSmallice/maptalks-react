@@ -3,14 +3,16 @@ nav:
     title: 组件
     order: 1
 group:
-    title: 容器
+    title: 容器组件
+    order: 0
+order: 0
 ---
 
 # Maptalks
 
 地图容器，其他所有图层组件必须在该组件内部使用
 
-```jsx
+```tsx
 import { Maptalks, TileLayer } from 'maptalks-react'
 
 export default () => {

@@ -53,7 +53,7 @@
         "@vitejs/plugin-react-swc": "^3.3.2",
         "autoprefixer": "^10.4.16",
         "css-loader": "^6.8.1",
-        "dumi": "^2.2.10",
+        "dumi": "^2.2.12",
         "eslint": "^8.45.0",
         "eslint-plugin-react-hooks": "^4.6.0",
         "eslint-plugin-react-refresh": "^0.4.3",

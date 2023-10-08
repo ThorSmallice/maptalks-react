@@ -2,14 +2,38 @@ import useVectorLayer from '@hooks/useVectorLayer'
 import { isEmpty, isFunction } from 'lodash-es'
 import { Marker } from 'maptalks'
 import { nanoid } from 'nanoid'
-import { ReactNode, useContext, useEffect, useMemo, useRef, useState } from 'react'
+import { FC, ReactNode, useContext, useEffect, useMemo, useRef, useState } from 'react'
 import { Context } from '@context/index'
 import useInfoWindow, { InfoWindowWrap } from '@hooks/useInfoWindow'
 import './index.pcss'
 const ids = nanoid(4)
-const MarkerLayer = ({
+type triggers = 'click' | 'mouseenter' | 'mouseleave'
+const MarkerLayer: FC<{
+    /**
+     * @description 图层id
+     * @default
+     */
+    id?: string
+
+    /**
+     * @description 图层名称
+     * @default
+     */
+    name?: string
+    trigger?: triggers[]
+    fields?: {
+        x?: string
+        y?: string
+        id?: string
+    }
+    source: any[]
+    options?: any
+    customInfoWindow?: (data: any, close: () => void) => ReactNode
+    infoWindow?: boolean
+    itemOptions?: any
+}> = ({
     id = 'marker' + '-' + ids,
-    name,
+    name = '标注图层',
     trigger = ['click'],
     fields = {
         x: 'x',
@@ -21,7 +45,7 @@ const MarkerLayer = ({
     customInfoWindow,
     infoWindow = false,
     itemOptions = {},
-}: any) => {
+}) => {
     const { store, dispatch } = useContext(Context)
     const infoWindowRef = useRef<HTMLElement | ReactNode>(document.createElement('div'))
 
