@@ -1,10 +1,10 @@
-import useVectorLayer from '@hooks/useVectorLayer'
+import useVectorLayer from 'maptalks-react/src/hooks/useVectorLayer'
 import { isEmpty, isFunction } from 'lodash-es'
 import { Marker } from 'maptalks'
 import { nanoid } from 'nanoid'
 import { FC, ReactNode, useContext, useEffect, useMemo, useRef, useState } from 'react'
 import { Context } from '@context/index'
-import useInfoWindow, { InfoWindowWrap } from '@hooks/useInfoWindow'
+import useInfoWindow, { InfoWindowWrap } from 'maptalks-react/src/hooks/useInfoWindow'
 import './index.pcss'
 const ids = nanoid(4)
 type triggers = 'click' | 'mouseenter' | 'mouseleave'
@@ -17,7 +17,7 @@ const MarkerLayer: FC<{
 
     /**
      * @description 图层名称
-     * @default
+     * @default '标注图层'
      */
     name?: string
     trigger?: triggers[]

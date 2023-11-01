@@ -66,7 +66,17 @@ export default () => {
                                         ×
                                     </span>
                                 </p>
-                                <ul></ul>
+                                <ul>
+                                    {data &&
+                                        Object.keys(data).map((key) => {
+                                            return (
+                                                <li className="flex items-center" key={key}>
+                                                    <span className="w-[80px]">{key}:</span>
+                                                    <span>{data[key]}</span>
+                                                </li>
+                                            )
+                                        })}
+                                </ul>
                             </div>
                         )
                     }}

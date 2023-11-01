@@ -2,7 +2,7 @@ import { Ref, forwardRef, useContext, useEffect, useRef } from 'react'
 import { ui, Coordinate } from 'maptalks'
 import { Context } from '@context/index'
 import classNames from 'classnames'
-import './infowindow.pcss'
+import './index.pcss'
 export interface useInfoWindowOptions {
     options: {
         [key: string]: any

@@ -1,11 +1,11 @@
 import { Context as MapContext, initStore, reducer } from '@context/index'
 
 import cn from 'classnames'
-import React, { Component, FC, memo, useEffect, useMemo, useReducer, useRef } from 'react'
+import { find, first } from 'lodash-es'
+import { Map } from 'maptalks'
+import { FC, memo, useEffect, useReducer, useRef } from 'react'
 import './index.pcss'
 import { MaptalksProps } from './index.type'
-import { Map, TileLayer } from 'maptalks'
-import { find, first } from 'lodash-es'
 const Maptalks: FC<MaptalksProps> = memo(
     ({ children, className, baseLayerId, options }: MaptalksProps) => {
         const [store, dispatch] = useReducer(reducer, initStore)
