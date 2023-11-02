@@ -1,7 +1,8 @@
-import { memo, useContext, useEffect, useImperativeHandle, useRef } from 'react'
-import { TileLayer as tileLayer } from 'maptalks'
 import { Context } from '@context/index'
-const TileLayer = memo(({ source, layer }: any) => {
+import { TileLayer as tileLayer } from 'maptalks'
+import { FC, memo, useContext, useEffect, useImperativeHandle, useRef } from 'react'
+import { TileLayerProps } from './index.type'
+const TileLayer: FC<TileLayerProps> = memo(({ source, layer }) => {
     const { store, dispatch } = useContext(Context)
     const ref = useRef<any>(null)
     useImperativeHandle(layer, () => ref?.current)

@@ -2,7 +2,7 @@ import { defineConfig } from 'dumi'
 import { resolve } from 'path'
 export default defineConfig({
     outputPath: 'docs-dist',
-    // apiParser: {},
+    apiParser: {},
     resolve: {
         atomDirs: [
             {
@@ -14,7 +14,7 @@ export default defineConfig({
                 dir: 'src/md/hooks',
             },
         ],
-        // entryFile: './src/apientry.tsx',
+        entryFile: resolve(__dirname, 'src/apientry.tsx'),
     },
     themeConfig: {
         name: 'maptalks-react',
