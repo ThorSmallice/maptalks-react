@@ -25,6 +25,7 @@
             // "@@/*": [".dumi/tmp/*"],
             "maptalks-react": ["dist"],
             "maptalks-react/*": ["dist/*", "*"],
+            "@maptalks-react": ["src/index.ts"],
             "@context/*": ["src/context/*"],
             "@hooks/*": ["src/hooks/*"],
             "@comps/*": ["src/components/*"]

@@ -1,5 +1,4 @@
-import ReactDOM, { createRoot } from 'react-dom/client'
-import App from './App.tsx'
+import { createRoot } from 'react-dom/client'
 import { RouterProvider } from 'react-router-dom'
 import routers from './router'
 

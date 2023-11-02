@@ -1,5 +1,5 @@
 import { isObject, keys } from 'lodash-es'
-import { Maptalks, TileLayer, useScene, MarkerLayer } from 'maptalks-react'
+import { Maptalks, TileLayer, useScene, MarkerLayer } from '@maptalks-react'
 
 import { useContext, useEffect, useState } from 'react'
 

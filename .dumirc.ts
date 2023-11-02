@@ -7,11 +7,11 @@ export default defineConfig({
         atomDirs: [
             {
                 type: 'component',
-                dir: 'src/components',
+                dir: 'src/md/components',
             },
             {
                 type: 'hooks',
-                dir: 'src/hooks',
+                dir: 'src/md/hooks',
             },
         ],
         // entryFile: './src/apientry.tsx',
@@ -26,7 +26,7 @@ export default defineConfig({
         },
     },
     alias: {
-        'maptalks-react': resolve('dist/maptalks-react.es.js'),
+        'maptalks-react': resolve(__dirname, 'dist/maptalks-react.es.js'),
         '@context': resolve(__dirname, 'src/context'),
         '@hooks': resolve(__dirname, 'src/hooks'),
         '@comps': resolve(__dirname, 'src/components'),

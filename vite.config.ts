@@ -49,6 +49,7 @@ export default defineConfig({
     resolve: {
         alias: {
             'maptalks-react': resolve(__dirname, 'dist/maptalks-react.es.js'),
+            '@maptalks-react': resolve(__dirname, './src/index.ts'),
             '@comps': resolve(__dirname, './src/components'),
             '@hooks': resolve(__dirname, './src/hooks'),
             '@context': resolve(__dirname, './src/context'),
