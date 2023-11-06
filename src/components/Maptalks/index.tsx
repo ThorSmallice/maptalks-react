@@ -7,7 +7,7 @@ import { FC, memo, useEffect, useReducer, useRef } from 'react'
 import './index.pcss'
 import { MaptalksProps } from './index.type'
 const Maptalks: FC<MaptalksProps> = memo(
-    ({ children, className, baseLayerId, options }: MaptalksProps) => {
+    ({ children, className, baseLayerId, ...options }: MaptalksProps) => {
         const [store, dispatch] = useReducer(reducer, initStore)
 
         const ref = useRef<HTMLDivElement>(null)

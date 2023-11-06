@@ -5,8 +5,6 @@
         
             const MapTalks = lazy(() => import("../components/map-talks"));
         
-            const MarkerLayer = lazy(() => import("../components/marker-layer"));
-        
 
 
 
@@ -19,11 +17,6 @@
                         {
                             path: "map-talks",
                             element: <MapTalks></MapTalks>
-                        }
-                    ,
-                        {
-                            path: "marker-layer",
-                            element: <MarkerLayer></MarkerLayer>
                         }
                     ] 
             },
